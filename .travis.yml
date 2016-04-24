@@ -2,7 +2,7 @@ os: osx
 
 language: cpp
 
-compiler: gcc
+compiler: clang
 
 install:
     - brew update

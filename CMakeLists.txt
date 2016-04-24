@@ -6,7 +6,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
 endif()
 
 if (NOT CONFIGURED_ONCE)
-    set(CMAKE_CXX_FLAGS "-std=c++14 ${warnings}"
+    set(CMAKE_CXX_FLAGS "-std=c++11 ${warnings}"
         CACHE STRING "Flags used by the compiler during all build types." FORCE)
 endif()
 
