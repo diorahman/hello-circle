@@ -5,7 +5,7 @@ language: cpp
 compiler: gcc
 
 install:
-    - brew install gcc --HEAD
+    - brew install gcc
     - g++ --version
     - /usr/local/bin/g++ --version
     - export CC=/usr/local/bin/gcc
