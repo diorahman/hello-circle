@@ -5,10 +5,16 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set(warnings "-Wall -Wextra -Werror")
 endif()
 
-message("${CMAKE_SYSTEM} ${CMAKE_SYSTEM_VERSION} ${CMAKE_SYSTEM_NAME}")
+message("-- We are on ${CMAKE_SYSTEM_NAME} ${CMAKE_SYSTEM_VERSION}")
 if (NOT CONFIGURED_ONCE)
-    set(CMAKE_CXX_FLAGS "-std=c++11 ${warnings}"
-        CACHE STRING "Flags used by the compiler during all build types." FORCE)
+    if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+        message("-- Configured to use c++11")
+        set(CMAKE_CXX_FLAGS "-std=c++11 ${warnings}"
+            CACHE STRING "Flags used by the compiler during all build types." FORCE)
+    else()
+        set(CMAKE_CXX_FLAGS "-std=c++14 ${warnings}"
+            CACHE STRING "Flags used by the compiler during all build types." FORCE)
+    endif()
 endif()
 
 include_directories(include)
