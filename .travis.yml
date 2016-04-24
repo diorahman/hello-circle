@@ -8,7 +8,8 @@ install:
     - brew install gcc --HEAD
     - g++ --version
     - /usr/local/bin/g++ --version
-    - export CC=/usr/local/bin/g++
+    - export CC=/usr/local/bin/gcc
+    - export CXX=/usr/local/bin/g++
     - ./scripts/build-deps-unix.sh
 
 script: ./scripts/build.sh && make -C build/tests
