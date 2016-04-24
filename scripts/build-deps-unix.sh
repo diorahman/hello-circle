@@ -8,7 +8,7 @@ TOP=`pwd`
 # LibreSSL
 cd deps
 rm -rf portable-master
-wget -N https://github.com/libressl-portable/portable/archive/master.zip -O master.zip
+wget https://github.com/libressl-portable/portable/archive/master.zip -O master.zip
 unzip master.zip
 cd portable-master
 ./autogen.sh

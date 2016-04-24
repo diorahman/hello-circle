@@ -2,10 +2,10 @@ os: osx
 
 language: cpp
 
-compiler: clang
+compiler: gcc
 
 install:
-    - brew install cmake
+    - if [ $TRAVIS_OS_NAME == osx ]; brew install cmake; fi
     - ./scripts/build-deps-unix.sh
 
 script: ./scripts/build.sh && make -C build/tests
