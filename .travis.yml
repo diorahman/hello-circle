@@ -5,7 +5,7 @@ language: cpp
 compiler: gcc
 
 install:
-    - brew install cmake
+    - if [ $TRAVIS_OS_NAME == osx ]; then brew update && brew install cmake; fi
     - ./scripts/build-deps-unix.sh
 
 script: ./scripts/build.sh && make -C build/tests
