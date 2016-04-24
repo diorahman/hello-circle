@@ -2,14 +2,9 @@ os: osx
 
 language: cpp
 
-compiler: gcc
+compiler: clang
 
 install:
-    - brew install gcc
-    - g++ --version
-    - /usr/local/bin/g++ --version
-    - export CC=/usr/local/bin/gcc
-    - export CXX=/usr/local/bin/g++
     - ./scripts/build-deps-unix.sh
 
 script: ./scripts/build.sh && make -C build/tests

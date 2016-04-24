@@ -5,6 +5,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set(warnings "-Wall -Wextra -Werror")
 endif()
 
+message("${CMAKE_SYSTEM} ${CMAKE_SYSTEM_VERSION} ${CMAKE_SYSTEM_NAME}")
 if (NOT CONFIGURED_ONCE)
     set(CMAKE_CXX_FLAGS "-std=c++11 ${warnings}"
         CACHE STRING "Flags used by the compiler during all build types." FORCE)
