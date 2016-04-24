@@ -1,0 +1,11 @@
+os: osx
+
+language: cpp
+
+compiler: clang
+
+install:
+    - brew install cmake
+    - ./scripts/build-deps-unix.sh
+
+script: ./scripts/build.sh && make -C build/tests
